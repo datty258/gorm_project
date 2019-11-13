@@ -2,6 +2,7 @@ package api
 
 import (
 	"github.com/datty258/gorm_project/model"
+	"github.com/datty258/gorm_project/serializer"
 	"github.com/gin-gonic/gin"
 )
 
@@ -14,11 +15,14 @@ func ShowUser(c *gin.Context) {
 		Related(&user.Addresses).
 		Related(&user.Tel)
 
+	re := serializer.BuildUserResponse(user)
+
 	if res == nil {
 		panic("找不到该用户")
 	} else {
-		c.JSON(200, res)
+		c.JSON(200, re)
 	}
+
 }
 
 // AllUser 所有用户列表

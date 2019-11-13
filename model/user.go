@@ -1,7 +1,6 @@
 package model
 
 import (
-	"database/sql"
 	"time"
 
 	"github.com/jinzhu/gorm"
@@ -10,7 +9,7 @@ import (
 type User struct {
 	gorm.Model
 	Name         string
-	Age          sql.NullInt64
+	Age          int
 	Birthday     *time.Time
 	Email        string  `gorm:"type:varchar(100);unique_index"`
 	Role         string  `gorm:"size:255"`        // set field size to 255
