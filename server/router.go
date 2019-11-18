@@ -19,6 +19,8 @@ func NewRouter() *gin.Engine {
 		v1.GET("users/:id", api.ShowUser)
 		//所有用户
 		v1.GET("users", api.AllUser)
+		// 毒鸡汤
+		v1.GET("soul", api.ShowSoul)
 	}
 	return r
 }

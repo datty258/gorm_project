@@ -5,4 +5,5 @@ func migration() {
 	DB.AutoMigrate(&Address{})
 	DB.AutoMigrate(&Tel{})
 	DB.AutoMigrate(&Language{})
+	DB.AutoMigrate(&Soul{})
 }
